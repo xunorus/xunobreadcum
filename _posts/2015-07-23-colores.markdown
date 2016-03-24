@@ -1,0 +1,16 @@
+---
+layout: post
+title: "colores"
+date: 2015-07-23
+---
+
+Lista de Colores complementarios:
+
+Del Rojo --> Cyan
+Del verde --> Magenta
+Del Azul (Se aleja) --> Amarillo (Se acerca)
+
+
+<a href="{{site.path}}/assets/mde29.jpg" class="fullsizable">
+{% image assets/colores.jpg "Image alt text" "6-8-2015 en LA SCALA DE SAN TELMO" %}
+</a>

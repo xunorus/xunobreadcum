@@ -1,0 +1,55 @@
+---
+layout: post
+title: "Música de las Estrellas"
+date: 2015-07-17
+commments: true
+---
+## Música de las Estrellas
+
+## Comentario
+<a href="{{site.path}}/assets/mde29.jpg" class="fullsizable">
+{% image assets/mde29.jpg "Image alt text" "6-8-2015 en LA SCALA DE SAN TELMO" %}
+</a>
+En un tiempo simultaneo, incorpóreo, akáshico,  devenidos a la manera de Leibniz, en mónadas, el principito y su flor evocan sus experiencias pasadas y futuras.
+
+Basada en El Principito (Exupery) y El regreso del Jóven Príncipe (Roemmers), Música de las estrellas nos lleva por un recorrido introspectivo en la senda del aprendizaje, la trascendencia personal y el amor incondicional.
+
+## Estreno
+Jueves 6 de Agosto
+
+## Lugar
+La Scala de San Telmo
+Psje. Giuffra 371
+
+## Entradas
+RESERVAS POR MENSAJE DE TEXTO ENTRE LAS 10 Y LAS 19 AL 15-6500-5093 CONSIGNANDO:
+1) FECHA Y HORA DEL EVENTO
+2) NOMBRE Y APELLIDO DE LAS PERSONAS QUE RESERVAN
+3) TELÉFONOS
+
+[http://lascala.org.ar/progscala1clas.htm]
+
+[http://lascala.org.ar/contacto.htm]
+
+## Intérpretes
+Xunorus (Claudio Maldonado)
+Guitarroco , voz, composición y dirección
+
+Inés Latkovick
+Voz y composición adicional
+
+Matías de Ezcurra
+Voz y medios electroacústicos
+
+Ignacio Mandrafina
+Violín
+
+Evelyn Avalos
+Viola
+
+Juan Manuel Costas
+Cello
+
+
+Diego Pirrone
+Contrabajo

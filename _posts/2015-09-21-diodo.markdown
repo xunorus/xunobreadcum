@@ -1,0 +1,99 @@
+---
+layout: post
+title: "diodo"
+date: 2015-09-21
+---
+
+## DIODO RECTIFICADOR
+La funcion principal de un diodo rectificador es eliminar la fase negativa de la corriente alterna ya que no conduce esta polarizacion. Se usa principalmente en fuentes de alimentacion electrica, mas especificamente en la fase de rectificacion donde se pasa de corriente alterna a directa por un arreglo de diodos llamado puente de diodos.
+
+
+
+## DIODO
+Un diodo es un dispositivo diseñado para que la corriente fluya en un solo sentido, es decir, solamente permite que la corriente vaya en una sola dirección.
+
+
+## CORRIENTE ALTERNA
+La corriente alterna pasa “alternándose” entre positiva y negativa. Tiene la forma de una onda senoidal.
+Tiene un semi ciclo positivo y un semi ciclo negativo, la corriente fluye desde el punto de mayor potencia hasta el punto de menor potencial.
+
+## Corriente directa o continua
+La corriente continua se refiere al flujo continuo de carga eléctrica a través de un conductor entre dos puntos de distinto potencial, que no cambia de sentido con el tiempo.
+
+## LED
+led (del acrónimo inglés LED, light-emitting diode: ‘diodo emisor de luz).
+Los primeros ledes emitían luz roja de baja intensidad, pero los dispositivos actuales emiten luz de alto brillo en el espectro infrarrojo, visible y ultravioleta.
+
+###Formas de determinar la polaridad de un led de inserción
+
+Existen tres formas principales de conocer la polaridad de un led:
+
+    La pata más larga siempre va a ser el ánodo.3
+    En el lado del cátodo, la base del led tiene un borde plano.
+    Dentro del led, la plaqueta indica el ánodo. Se puede reconocer porque es más pequeña que el yunque, que indica el cátodo.
+
+### Funcionamiento
+
+    Cuando un led se encuentra en polarización directa, los electrones pueden recombinarse con los huecos en el dispositivo, liberando energía en forma de fotones. Este efecto es llamado electroluminiscencia y el color de la luz (correspondiente a la energía del fotón) se determina a partir de la banda de energía del semiconductor.
+
+
+### Colores
+A finales de los años noventa se inventaron los ledes ultravioletas y azules.
+Ledes blancos
+
+Gracias a la invención de los ledes azules se dio el paso al desarrollo del led blanco, que es un led de luz azul con recubrimiento de fósforo que produce una luz amarilla. La mezcla del azul y el amarillo (colores complementarios en el espectro RGB) produce una luz blanquecina denominada «luz de luna» que consigue alta luminosidad (7 lúmenes unidad), con lo cual se ha logrado ampliar su utilización en otros sistemas de iluminación.
+
+### Funcionamiento en detalle
+El funcionamiento normal consiste en que, en los materiales conductores, un electrón, al pasar de la banda de conducción a la de valencia, pierde energía; esta energía perdida se manifiesta en forma de un fotón desprendido, con una amplitud, una dirección y una fase aleatoria. El que esa energía perdida, cuando pasa un electrón de la banda de conducción a la de valencia, se manifieste como un fotón desprendido o como otra forma de energía (calor por ejemplo) depende principalmente del tipo de material semiconductor. Cuando un diodo semiconductor se polariza directamente, los huecos de la zona positiva se mueven hacia la zona negativa y los electrones se mueven de la zona negativa hacia la zona positiva; ambos desplazamientos de cargas constituyen la corriente que circula por el diodo.
+
+
+### Calcular la potencia
+La diferencia de potencial varía de acuerdo a las especificaciones relacionadas con el color y la potencia soportada.
+
+En términos generales, pueden considerarse de forma aproximada los siguientes valores de diferencia de potencial:12
+
+    Rojo = 1,8 a 2,2 voltios.
+    Anaranjado = 2,1 a 2,2 voltios.
+    Amarillo = 2,1 a 2,4 voltios.
+    Verde = 2 a 3,5 voltios.
+    Azul = 3,5 a 3,8 voltios.
+    Blanco = 3,6 voltios.
+
+    Luego, mediante la ley de Ohm, puede calcularse la resistencia R adecuada para la tensión de la fuente Vfuente que utilicemos. R = \frac {{V_{fuente}}-{(V_{d1} +V_{d2}+....)}}{I}
+
+
+    Otros ledes de una mayor capacidad de corriente, conocidos como ledes de potencia (1 W, 3 W, 5 W, etc.), pueden ser usados a 150 mA, 350 mA, 750 mA o incluso a 3000 mA dependiendo de las características optoeléctricas dadas por el fabricante.
+
+    también pueden conectarse varios en serie, sumándose las diferencias de potencial en cada uno. También se pueden hacer configuraciones en paralelo, aunque este tipo de configuraciones no son muy recomendadas para diseños de circuitos con ledes eficientes.
+
+{% youtube  https://www.youtube.com/watch?v=N73txERy5Fs %}
+
+## NEODIMIO
+La estructura tetragonal de los cristales de Nd2Fe14B posee una excepcional anisotropía magnética uniaxial (HA ~ 7 teslas) esto le otorga al compuesto el potencial de poseer una altísima coercividad (resistencia a ser desmagnetizado). El compuesto también posee una alta saturación magnética (Js ~1,6 T o 16 kG) que típicamente es de 1,3 teslas
+
+## Magentos / IMANES
+
+
+Ten Facts about Magnets
+
+(from the book Driving Force)
+
+1. North poles point north, south poles point south.
+
+2. Like poles repel, unlike poles attract.
+
+3. Magnetic forces attract only magnetic materials.
+
+4. Magnetic forces act at a distance.
+
+5. While magnetized, temporary magnets act like permanent magnets.
+
+6. A coil of wire with an electric current flowing through it becomes a magnet.
+
+7. Putting iron inside a current-carrying coil increases the strength of the electromagnet.
+
+8. A changing magnetic field induces an electric voltage in a conductor.
+
+9. A charged particle experiences no magnetic force when moving parallel to a magnetic field, but when it is moving perpendicular to the field it experiences a force perpendicular to both the field and the direction of motion.
+
+10. A current-carrying wire in a perpendicular magnetic field experiences a force in a direction perpendicular to both the wire and the field.

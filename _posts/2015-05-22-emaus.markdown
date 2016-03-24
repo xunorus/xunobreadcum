@@ -1,0 +1,11 @@
+---
+layout: post
+title: "emaus"
+date: 2015-05-22
+---
+
+{% image img/1037.jpg "Image alt text" "Optional image caption" %}
+
+
+De mi admirado amigo EMAUS
+<img src="{{site.image_path}}/1037.jpg" />

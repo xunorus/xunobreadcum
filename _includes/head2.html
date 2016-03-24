@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+
+    <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<!-- <title>{{ site.meta_title }}</title> -->
+
+    <meta name="description" content="Xunorus, composer performer" />
+    <meta name="keywords" content="guitar, patagonia, music" />
+    <meta name="author" content="Xunorus" />
+    <meta http-equiv="cleartype" content="on">
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+
+
+      <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+      <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+      <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+      <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+
+      <script type="application/ld+json">
+      {% include metadata.json %}
+      </script>
+
+      <link rel="stylesheet" type="text/css" href="{{ site.url }}/css/main.css" />
+
+
+
+      <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+      <!-- <script async src="https://cdn.ampproject.org/v0.js"></script> -->
+    </head>
+
+
+
+
+	<script src="{{ site.url }}/js/modernizr-custom.js"></script>
+	<script src="{{ site.url }}/js/jquery-2.2.2.min.js"></script>
+	<script src="{{ site.url }}/js/velocity.min.js"></script>
+	<script src="{{ site.url }}/js/velocity.ui.min.js"></script>
+  <script src="{{ site.url }}/js/jquery.history.js"></script>
+	<script src="{{ site.url }}/js/jquery.easing.1.3.js"></script>
+
+</head>
+
+<body>
+	<!-- Main container -->
+	<div class="container">
+		<!-- Blueprint header -->
+		<header class="bp-header cf">
+			<div class="dummy-logo">
+				<div class="dummy-icon foodicon foodicon--coconut"></div>
+				<h2 class="dummy-heading">Xunorus</h2>
+			</div>
+			<div class="bp-header__main">
+				<span class="bp-header__present">Xunorus <span class="bp-tooltip bp-icon bp-icon--about" data-content="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span></span>
+				<h1 class="bp-header__title">Composer -Performer</h1>
+
+      	<nav class="bp-nav">
+					<a class="bp-nav__item bp-icon bp-icon--prev" href="http://tympanus.net/Blueprints/PageStackNavigation/" data-info="Read my Bio"><span>Bio</span></a>
+					<!-- <a class="bp-nav__item bp-icon bp-icon--next" href="" data-info="next Blueprint"><span>Next Blueprint</span></a> -->
+					<a class="bp-nav__item bp-icon bp-icon--drop" href="http://tympanus.net/codrops/?p=25521" data-info="Contact me"><span>Contact</span></a>
+					<a class="bp-nav__item bp-icon bp-icon--archive" href="#" data-info="Search this website"><span>Search</span></a>
+				</nav>
+
+			</div>
+		</header>
+
+<button class="action action--open" aria-label="Open Menu"><span class="icon icon--menu"></span></button>
+		<nav id="ml-menu" class="menu">
+			<button class="action action--close" aria-label="Close Menu"><span class="icon icon--cross"></span></button>
+			<div class="menu__wrap">
+				<ul data-menu="main" class="menu__level">
+					<li class="menu__item"><a class="menu__link" data-submenu="submenu-1" href="#">Music</a></li>
+					<li class="menu__item"><a class="menu__link" data-submenu="submenu-2" href="#">Dossier</a></li>
+					<li class="menu__item"><a class="menu__link" data-submenu="submenu-3" href="#">Blog</a></li>
+					<li class="menu__item"><a class="menu__link" data-submenu="submenu-4" href="#">Commmissioning</a></li>
+					<li class="menu__item"><a class="menu__link" data-submenu="submenu-5" href="#">Booking</a></li>
+				</ul>
+				<!-- Submenu 1 -->
+				<ul data-menu="submenu-1" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Cantata</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Coleccion</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Suite Patagonica</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Musica de las Estrellas</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Ah! Opera no-opera</a></li>
+					<li class="menu__item"><a class="menu__link" data-submenu="submenu-1-1" href="#">Next Work</a></li>
+				</ul>
+				<!-- Submenu 1-1 -->
+				<ul data-menu="submenu-1-1" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Fair Trade Roots</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Dried Veggies</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Our Brand</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Homemade</a></li>
+				</ul>
+				<!-- Submenu 2 DOSSIER -->
+				<ul data-menu="submenu-2" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Xunorus Trio</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Xunorus Quintet</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Xunorus Septet</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Solo</a></li>
+					<li class="menu__item"><a class="menu__link" data-submenu="submenu-2-1" href="#">Scores</a></li>
+				</ul>
+				<!-- Submenu 2-1 -->
+				<ul data-menu="submenu-2-1" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Exotic Mixes</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Wild Pick</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Vitamin Boosters</a></li>
+				</ul>
+				<!-- Submenu 3 BLOG -->
+				<ul data-menu="submenu-3" class="menu__level">
+					{% for post in site.posts %}
+				<li class="menu__item"><span>{{ post.date | date_to_string }}</span> &raquo; <a "menu__link" href="{{ post.url }}">{{ post.title }}</a></li>
+					{% endfor %}
+					<!-- <li class="menu__item"><a class="menu__link" href="#">Buckwheat</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Millet</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Quinoa</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Wild Rice</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Durum Wheat</a></li> -->
+					<li class="menu__item"><a class="menu__link" data-submenu="submenu-3-1" href="#">Promo Packs</a></li>
+				</ul>
+				<!-- Submenu 3-1 -->
+				<ul data-menu="submenu-3-1" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Starter Kit</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">The Essential 8</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Bolivian Secrets</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Flour Packs</a></li>
+				</ul>
+				<!-- Submenu 4 COMMISSIONING-->
+				<ul data-menu="submenu-4" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">How to Commission</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">F.A.Q.</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">What is Commissionning</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Nutri Drinks</a></li>
+					<li class="menu__item"><a class="menu__link" data-submenu="submenu-4-1" href="#">Selection</a></li>
+				</ul>
+				<!-- Submenu 4-1 -->
+				<ul data-menu="submenu-4-1" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Nut Mylk Packs</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Amino Acid Heaven</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Allergy Free</a></li>
+				</ul>
+				<!-- Submenu 5 Booking -->
+				<ul data-menu="submenu-1" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Cantata</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Coleccion</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Suite Patagonica</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Musica de las Estrellas</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Ah! Opera no-opera</a></li>
+					<li class="menu__item"><a class="menu__link" data-submenu="submenu-1-1" href="#">Next Work</a></li>
+				</ul>
+				<!-- Submenu 5-1 -->
+				<ul data-menu="submenu-1-1" class="menu__level">
+					<li class="menu__item"><a class="menu__link" href="#">Fair Trade Roots</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Dried Veggies</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Our Brand</a></li>
+					<li class="menu__item"><a class="menu__link" href="#">Homemade</a></li>
+				</ul>
+			</div>
+		</nav>
+
+
+  <main id='ajaxContent' class="mainContent">

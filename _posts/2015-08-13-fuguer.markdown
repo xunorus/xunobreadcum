@@ -1,0 +1,512 @@
+---
+layout: post
+title: "fuguer"
+date: 2015-08-13
+---
+Este es mi algoritmo para la obra "Fugas para los proximos 25920 años".
+---
+//initialize.ck
+// Machine.add(me.dir() + "/fuguer/FUGUER_6b.ck");
+
+
+me.dir() + "/fuguer/FUGUER_6b.ck" => string fugueMAKER;
+// add score.ck
+
+// while( true ){
+// Machine.add(fugueMAKER);
+// 43::second => now;
+// }
+Machine.add(fugueMAKER);
+
+---
+
+<<<"One_Fugue_for_each_day_of_the_next_26000_Years">>>; //prints title
+// la musica es un lenguaje universal, las matematicas son la lengua universal
+
+//seed
+if (me.args()==1)
+{//if seed set by user
+  Std.atoi(me.arg(0))=> int seed;
+  Math.srandom(seed);
+  <<<me.arg(0)>>>;
+
+  seed/365=> int year;
+  seed%365 =>int days;
+  <<<"Year", year,"Day number:",days>>>;
+  <<<"Name", seed>>>;
+
+}
+else
+{
+  Math.random2(0, 9460800 )=> int seed;//25920.365=9460800
+  Math.srandom(seed);
+
+  seed/365=> int year;
+  seed%365 =>int days;
+  <<<"Year", year,"Day number:",days>>>;
+  <<<"Name", seed>>>;
+  <<<"To hear this again append  ':name' to the chuck command ">>>;
+
+}
+/*
+rythm
+3/8 + 3/8 + 4/8 + 2/8 + 2/8
+*/
+
+//Sound chain
+Gain master =>dac;
+
+SndBuf click=> Pan2 p1 => NRev verbOscA =>dac;
+SndBuf kick=> Pan2 p2 =>dac;
+SinOsc oscA  => Pan2 p4 =>  dac;
+TriOsc oscB=> Pan2 p3=>dac;
+TriOsc oscC=> Pan2 p5=>dac;
+
+
+//reset Gain
+0 =>oscA.gain=>oscB.gain=>oscC.gain=>kick.gain=>click.gain;
+//sound chain
+Impulse imp => ResonZ filt =>Pan2 p =>dac;
+800.0 => filt.freq;
+400=>filt.Q;
+0.7=> imp.gain;
+
+//set pan positions
+  1.0 =>p1.pan;
+  .3 =>p2.pan;
+  -0.2 =>p4.pan;
+  -1 =>p3.pan;
+  0.8 =>p5.pan;
+
+//set reverb level
+    0.1 => verbOscA.mix;
+
+
+//store now to deduct lenght later
+now => time t1;
+//init beat counter
+0=> int counter;  
+//timing parammeter
+0.75/3 => float beattime;// (0.75::second in your composition!) :)
+
+
+//global arrays
+
+//bombo
+[01, 00, 00, 01, 00, 00, 00, 00, 00, 01, 01, 00, 01, 00]  @=> int bombo_1[];
+[01, 00, 00, 01, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00]@=> int bombo_2[];
+
+//aro
+[00, 00, 01, 00, 00, 01, 00, 00, 00, 00, 00, 01, 00, 01] @=> int aro_1[];
+[00, 00, 00, 01, 02, 00, 00, 00, 00, 00, 00, 00, 00, 00]   @=> int aro_2[];//2= roll
+
+
+
+// with random
+[49, 50, 52, 54, 56, 57, 59, 61,0, 0] @=> int notes[];//the  0 is for silence, there;s two to increase silence probability
+//Function to avoid writing the same sentence
+
+ fun int nota ( int x)
+  {//how do I get rid of input?
+  notes[Math.random2(0, notes.cap()-1)] => x;
+  return x;
+  }
+//store variables into array, (I spent a lot of time trying to improve this but I couldn make it yet...)
+  nota(1)  =>int N1;
+  nota(2)  =>int N2;
+  nota(2)  =>int N3;
+  nota(2)  =>int N4;
+  nota(2)  =>int N5;
+  nota(2)  =>int N6;
+  nota(2)  =>int N7;
+  nota(2)  =>int N8;
+  nota(2)  =>int N9;
+  nota(2)  =>int N10;
+  nota(2)  =>int N11;
+  nota(2)  =>int N12;
+  nota(2)  =>int N13;
+  nota(2)  =>int N14;
+
+  nota(1)  =>int O1;
+  nota(2)  =>int O2;
+  nota(2)  =>int O3;
+  nota(2)  =>int O4;
+  nota(2)  =>int O5;
+  nota(2)  =>int O6;
+  nota(2)  =>int O7;
+  nota(2)  =>int O8;
+  nota(2)  =>int O9;
+  nota(2)  =>int O10;
+  nota(2)  =>int O11;
+  nota(2)  =>int O12;
+  nota(2)  =>int O13;
+  nota(2)  =>int O14;
+
+  nota(1)  =>int P1;
+  nota(2)  =>int P2;
+  nota(2)  =>int P3;
+  nota(2)  =>int P4;
+  nota(2)  =>int P5;
+  nota(2)  =>int P6;
+  nota(2)  =>int P7;
+  nota(2)  =>int P8;
+  nota(2)  =>int P9;
+  nota(2)  =>int P10;
+  nota(2)  =>int P11;
+  nota(2)  =>int P12;
+  nota(2)  =>int P13;
+  nota(2)  =>int P14;
+
+  nota(1)  =>int Q1;
+  nota(2)  =>int Q2;
+  nota(2)  =>int Q3;
+  nota(2)  =>int Q4;
+  nota(2)  =>int Q5;
+  nota(2)  =>int Q6;
+  nota(2)  =>int Q7;
+  nota(2)  =>int Q8;
+  nota(2)  =>int Q9;
+  nota(2)  =>int Q10;
+  nota(2)  =>int Q11;
+  nota(2)  =>int Q12;
+  nota(2)  =>int Q13;
+  nota(2)  =>int Q14;
+
+  nota(1)  =>int R1;
+  nota(2)  =>int R2;
+  nota(2)  =>int R3;
+  nota(2)  =>int R4;
+  nota(2)  =>int R5;
+  nota(2)  =>int R6;
+  nota(2)  =>int R7;
+  nota(2)  =>int R8;
+  nota(2)  =>int R9;
+  nota(2)  =>int R10;
+  nota(2)  =>int R11;
+  nota(2)  =>int R12;
+  nota(2)  =>int R13;
+  nota(2)  =>int R14;
+
+
+[ N1, N2, N3, N4, N5, N6, N7, N8, N9, N10, N11, N12, N13, N14 ]   @=> int melo_1[];
+[ O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14 ]   @=> int melo_2[];
+[ P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14 ]   @=> int melo_3[];
+[ Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14 ]   @=> int melo_4[];
+[ R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R2, R13, R14 ]   @=> int melo_5[];
+
+[ 49, 50, 52, 57, 59, 61, 00, 00, P1, P2, P3, P4, P5, P6 ]    @=>  int melo_B[];//forced transition melody
+
+
+//open soundfiles
+me.dir(-1) + "/audio/kick_05.wav" =>kick.read;
+me.dir(-1) + "/audio/snare_03.wav" =>click.read;
+
+
+//set sample pitches
+
+//set gain levels
+0 => oscA.gain=> kick.gain=> click.gain=>oscB.gain;
+
+//prevent samples to play on load
+kick.samples() =>kick.pos;
+click.samples() =>click.pos;
+
+
+/* *************
+FUNCTIONS
+**************** */
+
+/* ********************************
+SNAREROLL (from lecture)
+********************************** */
+fun int drumRoll ( int index)
+{
+  <<<index>>>;
+  if (index >=1)
+  {
+      //play sound for duration of index
+      0=>click.pos;
+      index::ms =>now;
+      //call drumRollwhile reducig index
+      return drumRoll (index-1);
+      }
+      else if (index ==0);
+      {
+          return 0; //end
+          }
+}
+
+
+/* ********************************
+FUNCTION "play"
+three voices
+********************************** */
+fun void play(int kickArray[], int clickArray[],  int meloArrayA[], int transpA, int instrmA, int meloArrayB[], int transpB, int instrmB, int meloArrayC[], int transpC, int instrmC)
+{
+  //sequencer for basedrum and snaredrum beats
+  for (0 => int i; i < kickArray.cap(); i++ )
+  {
+      //if one in the array then play kick
+      if(kickArray[i] ==1)
+      {
+          0=>kick.pos;
+          }
+       if (clickArray[i]==1)
+      {
+          0=>click.pos;
+          }
+       //if one in array play click
+       if (clickArray[i]==2)
+       {
+          drumRoll(22);
+          }
+        //set freq using array A
+       if (instrmA==0 )// route audio to the proper instrument
+      {
+          Std.mtof((meloArrayA[i])+ transpA)  => oscA.freq;
+
+                  }
+        if (instrmA==1 )
+        {
+           Std.mtof((meloArrayA[i])+ transpA)  => oscB.freq ;
+                  }
+        if (instrmA==2 )
+          {
+           Std.mtof((meloArrayA[i])+ transpA)  => oscC.freq ;
+                  }
+          //set freq using array B
+       if (instrmB==0 )// route audio to the proper instrument
+      {
+          Std.mtof((meloArrayB[i])+ transpB)  => oscA.freq;
+                  }
+       if (instrmB==1 )
+       {
+           Std.mtof((meloArrayB[i])+ transpB)  => oscB.freq ;
+               }
+           if (instrmB==2 )
+       {
+           Std.mtof((meloArrayB[i])+ transpB)  => oscC.freq ;
+               }
+
+                       //set freq using array C
+       if (instrmC==0 )// route audio to the proper instrument
+      {
+          Std.mtof((meloArrayC[i])+ transpC)  => oscA.freq;
+                  }
+       if (instrmC==1 )
+       {
+           Std.mtof((meloArrayC[i])+ transpC)  => oscB.freq ;
+               }
+         if (instrmC==2 )
+       {
+           Std.mtof((meloArrayC[i])+ transpC)  => oscC.freq ;
+               }
+
+      //BEAT COUNTER
+          <<<"Counter:", counter >>>;
+          counter++; //counter +1 => counter
+           now => time t2;
+          (t2-t1)/second => float tiempo;
+          <<<"TIME:",tiempo,"seconds">>>;
+
+          beattime::second =>now;
+  }
+}
+
+
+/* ********************************
+FUNCTION "play"
+2 voices
+********************************** */
+fun void play(int kickArray[], int clickArray[],  int meloArrayA[], int transpA, int instrmA, int meloArrayB[], int transpB, int instrmB)
+{
+  //sequencer for basedrum and snaredrum beats
+  for (0 => int i; i < kickArray.cap(); i++ )
+  {
+      //if one in the array then play kick
+      if(kickArray[i] ==1)
+      {
+          0=>kick.pos;
+          }
+       if (clickArray[i]==1)
+      {
+          0=>click.pos;
+          }
+       //if one in array play click
+       if (clickArray[i]==2)
+       {
+          drumRoll(22);
+          }
+        //set freq using array A
+       if (instrmA==0 )// route audio to the proper instrument
+      {
+          Std.mtof((meloArrayA[i])+ transpA)  => oscA.freq;
+
+                  }
+        if (instrmA==1 )
+        {
+           Std.mtof((meloArrayA[i])+ transpA)  => oscB.freq ;
+                  }
+
+          //set freq using array B
+       if (instrmB==0 )// route audio to the proper instrument
+      {
+          Std.mtof((meloArrayB[i])+ transpB)  => oscA.freq;
+                  }
+       if (instrmB==1 )
+       {
+           Std.mtof((meloArrayB[i])+ transpB)  => oscB.freq ;
+               }
+
+      //BEAT COUNTER
+          <<<"Counter:", counter >>>;
+          counter++; //counter +1 => counter
+           now => time t2;
+          (t2-t1)/second => float tiempo;
+          <<<"TIME:",tiempo,"seconds">>>;
+
+          beattime::second =>now;
+  }
+}
+
+
+
+
+/* ********************************
+FUNCTION "play" ()reduced
+One voice
+********************************** */
+fun void play(int kickArray[], int clickArray[], int meloArrayA[], int transpA, int instrmA)
+{
+  //sequencer for basedrum and snaredrum beats
+  for (0 => int i; i < kickArray.cap(); i++ )
+  {
+      //if one in the array then play kick
+      if(kickArray[i] ==1)
+      {
+          0=>kick.pos;
+          }
+       if (clickArray[i]==1)
+      {
+          0=>click.pos;
+          }
+       //if one in array play click
+       if (clickArray[i]==2)
+       {
+          drumRoll(22);
+          }
+        //set freq using array A
+       if (instrmA==0 )// route audio to the proper instrument
+      {
+          Std.mtof((meloArrayA[i])+ transpA)  => oscA.freq;
+
+                  }
+        if (instrmA==1 )
+        {
+           Std.mtof((meloArrayA[i])+ transpA)  => oscB.freq ;
+                  }
+
+
+      //BEAT COUNTER
+          <<<"Counter:", counter >>>;
+          counter++; //counter +1 => counter
+           now => time t2;
+          (t2-t1)/second => float tiempo;
+          <<<"TIME:",tiempo,"seconds">>>;
+
+      beattime::second =>now;
+  }//end for loop
+}//end fuction
+
+
+
+/* ********************************
+FUNCTION "play" ()more reduced yet
+to use with kick and click only
+********************************** */
+fun void play(int kickArray[], int clickArray[])
+{
+  //sequencer for basedrum and snaredrum beats
+  for (0 => int i; i < kickArray.cap(); i++ )
+  {
+      //if one in the array then play kick
+      if(kickArray[i] ==1)
+      {
+          0=>kick.pos;
+          }
+       if (clickArray[i]==1)
+      {
+          0=>click.pos;
+          }
+       //if one in array play click
+       if (clickArray[i]==2)
+       {
+          drumRoll(22);
+          }
+
+
+
+      //BEAT COUNTER
+          <<<"Counter:", counter >>>;
+          counter++; //counter +1 => counter
+           now => time t2;
+          (t2-t1)/second => float tiempo;
+          <<<"TIME:",tiempo,"seconds">>>;
+
+      beattime::second =>now;
+  }//end for loop
+}//end fuction
+
+
+
+
+/* *********
+SCORE
+********** */
+1=>int i;
+//INTRO
+while(true)
+{
+  300.0 =>imp.next;//generate 1 per sample
+  Math.random2f(1200, 1500)=>filt.freq;
+  Math.random2f(0.1,0.4)::second=>now;
+  i++;
+  //PHI PARA RAMPAS
+Math.sin(now/1::second*2*pi) => p.pan;
+  <<<i >>>;
+  if (i==15)
+  {break;}
+
+  }  
+  0=> imp.gain;
+       1::second => now;//intro
+
+//FUGUE MAKER
+while(true)
+{
+    i++;
+  <<<i >>>;
+
+//ONE VOICE
+   1.0/3 => oscA.gain=> kick.gain=> click.gain; //adjust gain proportionally , remember oscB is off...
+      play(bombo_1, aro_1,  melo_1, 0,0);
+      play(bombo_1, aro_2,  melo_2, 0,0);
+
+//TWO VOICES
+  1.0/4 => oscA.gain=> kick.gain=> click.gain =>oscB.gain;
+      play(bombo_1, aro_1,   melo_B, 7,0 , melo_1, 7,1);
+      play(bombo_1, aro_2,   melo_3, 7,0 , melo_2, 7,1);
+//THREE VOICES
+1.0/5 => oscA.gain=> kick.gain=> click.gain =>oscB.gain=>oscC.gain;
+      play(bombo_1, aro_1,   melo_4, 2,0 , melo_B, 14,1, melo_1, 14,2);
+      play(bombo_1, aro_2,   melo_5, 2,0 , melo_3, 14,1, melo_2, 14,2);
+    //  play(bombo_1, aro_2,   melo_6, 14,0 , melo_3, 14,1, melo_B, 14,2);
+
+   1.0/2 =>kick.gain=> click.gain;
+   0=>oscA.gain=>oscB.gain=>oscC.gain;
+      play(bombo_2, aro_2);
+
+  now => time t2;
+  <<<"TOTAL DURATION:",(t2-t1)/second,"seconds">>>;
+   break;
+   }

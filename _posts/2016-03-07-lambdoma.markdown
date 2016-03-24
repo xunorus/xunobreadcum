@@ -1,0 +1,9 @@
+---
+layout: post
+title: "lambdoma"
+date: "2016-03-07"
+---
+
+
+{% youtube CGiiSlMFFlI %}
+{% youtube zRYpHSa6jE %}
